@@ -157,7 +157,7 @@ return array(
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => array(
-                    array('', '0'),
+                    array('label' => '', 'value' => '0'),
                 ),
                 'foreign_table' => 'tx_chftime_domain_model_temporal_entity',
                 'foreign_table_where' => 'AND tx_chftime_domain_model_temporal_entity.pid IN (###PAGE_TSCONFIG_IDLIST###) ORDER BY name',
