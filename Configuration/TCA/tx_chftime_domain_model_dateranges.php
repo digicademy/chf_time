@@ -8,7 +8,6 @@ return array(
         'default_sortby' => 'ORDER BY label',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => 2,
         'versioning_followPages' => true,
         'languageField' => 'sys_language_uid',
@@ -18,27 +17,13 @@ return array(
         'enablecolumns' => array(
             'disabled' => 'hidden',
         ),
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
         'searchFields' => 'label,dating_from,precision_from,dating_to,precision_to,dating_point,method,duration',
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('chf_time') . 'Resources/Public/Icons/tx_chftime_domain_model_dateranges.svg'
     ),
     'interface' => array(
-        'showRecordFieldList' => '
-            sys_language_uid,
-            l10n_parent,
-            l10n_diffsource,
-            hidden,
-            label,
-            dating_from,
-            precision_from,
-            dating_to,
-            precision_to,
-            dating_point,
-            method,
-            certainty,
-            duration,
-            calendar,
-            temporal_entity,
-        ',
     ),
     'types' => array(
         '1' => array(
@@ -71,27 +56,17 @@ return array(
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ],
-                ],
-                'default' => 0,
+                'type' => 'language',
             ]
         ],
         'l10n_parent' => array(
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => array(
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => array(
-                    array('', 0),
+                    array('label' => '', 'value' => 0),
                 ),
                 'foreign_table' => 'tx_chftime_domain_model_dateranges',
                 'foreign_table_where' => 'AND tx_chftime_domain_model_dateranges.pid=###CURRENT_PID### AND tx_chftime_domain_model_dateranges.sys_language_uid IN (-1,0)',
@@ -184,9 +159,9 @@ return array(
             'exclude' => 1,
             'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xlf:tx_chftime_domain_model_dateranges.certainty',
             'config' => array(
-                'type' => 'input',
+                'type' => 'number',
                 'size' => 5,
-                'eval' => 'trim,int'
+                'eval' => 'trim'
             ),
         ),
         'duration' => array(
@@ -205,13 +180,12 @@ return array(
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => array (
-                    array('', '0'),
+                    array('label' => '', 'value' => 0),
                 ),
                 'foreign_table' => 'tx_chftime_domain_model_calendar',
                 'foreign_table_where' => 'AND tx_chftime_domain_model_calendar.pid IN (###PAGE_TSCONFIG_IDLIST###) ORDER BY name',
                 'minitems' => 0,
                 'maxitems' => 1,
-                'eval' => 'int',
                 'default' => 0
             ),
         ),
@@ -220,12 +194,10 @@ return array(
             'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_dateranges.temporal_entity',
             'config' => array(
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_chftime_domain_model_temporal_entity',
                 'foreign_table' => 'tx_chftime_domain_model_temporal_entity',
                 'maxitems' => 1,
                 'size' => 1,
-                'eval' => 'int',
                 'default' => 0,
                 'wizards' => array(
                     'suggest' => array(

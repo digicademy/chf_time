@@ -8,7 +8,6 @@ return array(
         'default_sortby' => 'ORDER BY name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => 2,
         'versioning_followPages' => true,
         'languageField' => 'sys_language_uid',
@@ -18,20 +17,13 @@ return array(
         'enablecolumns' => array(
             'disabled' => 'hidden',
         ),
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
         'searchFields' => 'persistent_identifier,name,name_variants,source,description',
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('chf_time') . 'Resources/Public/Icons/tx_chftime_domain_model_calendar.svg'
     ),
     'interface' => array(
-        'showRecordFieldList' => '
-            sys_language_uid,
-            l10n_parent,
-            l10n_diffsource,
-            hidden,
-            persistent_identifier,
-            name,
-            name_variants,
-            description
-        ',
     ),
     'types' => array(
         '1' => array(
@@ -57,27 +49,17 @@ return array(
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ],
-                ],
-                'default' => 0,
+                'type' => 'language',
             ]
         ],
         'l10n_parent' => array(
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => array(
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => array(
-                    array('', 0),
+                    array('label' => '', 'value' => 0),
                 ),
                 'foreign_table' => 'tx_chftime_domain_model_calendar',
                 'foreign_table_where' => 'AND tx_chftime_domain_model_calendar.pid=###CURRENT_PID### AND tx_chftime_domain_model_calendar.sys_language_uid IN (-1,0)',
@@ -109,7 +91,8 @@ return array(
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'eval' => 'trim',
+                'required' => true,
             ),
         ),
         'name' => array(

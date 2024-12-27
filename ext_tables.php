@@ -10,17 +10,3 @@ defined('TYPO3') or die();
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
     <INCLUDE_TYPOSCRIPT: source="FILE:EXT:chf_time/Configuration/TSConfig/setup.txt">
 ');
-
-// TABLE REGISTRATION
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
-    'tx_chftime_domain_model_dateranges'
-);
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
-    'tx_chftime_domain_model_temporal_entity'
-);
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
-    'tx_chftime_domain_model_calendar'
-);

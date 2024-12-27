@@ -8,7 +8,6 @@ return array(
         'default_sortby' => 'ORDER BY name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => 2,
         'versioning_followPages' => true,
         'languageField' => 'sys_language_uid',
@@ -18,26 +17,13 @@ return array(
         'enablecolumns' => array(
             'disabled' => 'hidden',
         ),
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
         'searchFields' => 'persistent_identifier,name,name_variants,source,description',
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('chf_time') . 'Resources/Public/Icons/tx_chftime_domain_model_temporal_entity.svg'
     ),
-    'interface' => array(
-        'showRecordFieldList' => '
-            sys_language_uid,
-            l10n_parent,
-            l10n_diffsource,
-            hidden,
-            persistent_identifier,
-            name,
-            name_variants,
-            type,
-            parent,
-            date_range,
-            spatial_extent,
-            source,
-            description
-        ',
-    ),
+    'interface' => array(),
     'types' => array(
         '1' => array(
             'showitem' => '
@@ -67,27 +53,17 @@ return array(
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ],
-                ],
-                'default' => 0,
+                'type' => 'language',
             ]
         ],
         'l10n_parent' => array(
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => array(
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => array(
-                    array('', 0),
+                    array('label' => '', 'value' => 0),
                 ),
                 'foreign_table' => 'tx_chftime_domain_model_temporal_entity',
                 'foreign_table_where' => 'AND tx_chftime_domain_model_temporal_entity.pid=###CURRENT_PID### AND tx_chftime_domain_model_temporal_entity.sys_language_uid IN (-1,0)',
@@ -119,7 +95,8 @@ return array(
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'eval' => 'trim',
+                'required' => true,
             ),
         ),
         'name' => array(
@@ -147,26 +124,26 @@ return array(
             'config' => array(
                 'type' => 'select',
                 'items' => array(
-                    array('', '0'),
+                    array('label' => '', 'value' => '0'),
                     array(
-                        'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.10',
-                        '10'
+                        'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.10',
+                        'value' => '10'
                     ),
                     array(
-                        'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.20',
-                        '20'
+                        'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.20',
+                        'value' => '20'
                     ),
                     array(
-                        'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.30',
-                        '30'
+                        'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.30',
+                        'value' => '30'
                     ),
                     array(
-                        'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.40',
-                        '40'
+                        'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.40',
+                        'value' => '40'
                     ),
                     array(
-                        'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.50',
-                        '50'
+                        'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.type.I.50',
+                        'value' => '50'
                     ),
                 ),
                 'minitems' => 0,
@@ -179,7 +156,7 @@ return array(
             'config' => array(
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => array (
+                'items' => array(
                     array('', '0'),
                 ),
                 'foreign_table' => 'tx_chftime_domain_model_temporal_entity',
@@ -220,12 +197,10 @@ return array(
             'label' => 'LLL:EXT:chf_time/Resources/Private/Language/locallang_db.xml:tx_chftime_domain_model_temporal_entity.spatial_extent',
             'config' => array(
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_chfgeo_domain_model_toponym',
                 'foreign_table' => 'tx_chfgeo_domain_model_toponym',
                 'maxitems' => 1,
                 'size' => 1,
-                'eval' => 'int',
                 'default' => 0,
                 'wizards' => array(
                     'suggest' => array(

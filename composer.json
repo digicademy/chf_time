@@ -1,7 +1,7 @@
 {
     "name": "digicademy/chf_time",
     "type": "typo3-cms-extension",
-    "description": "Time component of the Cultural Heritage Framework",
+    "description": "Time component of the Cultural Heritage Framework v1",
     "homepage": "http://www.digitale-akademie.de",
     "authors": [
         {
@@ -16,9 +16,10 @@
     "support": {
         "issues": "https://github.com/digicademy/chf_time/issues"
     },
-    "version": "dev-master",
+    "version": "dev-12.4-compatibility",
     "require": {
-        "typo3/cms-core": "^12.4"
+        "typo3/cms-core": ">=12.4.0 || <=12.4.99",
+        "digicademy/chf_geo": "dev-12.4-compatibility"
     },
     "replace": {
         "typo3-ter/chf_time": "self.version"
