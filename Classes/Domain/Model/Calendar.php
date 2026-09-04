@@ -36,7 +36,7 @@ class Calendar extends AbstractEntity
     /**
      * Persistent Identifier
      *
-     * @var \string $persistentIdentifier
+     * @var string $persistentIdentifier
      * @Extbase\Validate("NotEmpty")
      */
     protected $persistentIdentifier;
@@ -44,28 +44,28 @@ class Calendar extends AbstractEntity
     /**
      * Name
      *
-     * @var \string $name
+     * @var string $name
      */
     protected $name;
 
     /**
      * Name
      *
-     * @var \string $nameVariants
+     * @var string $nameVariants
      */
     protected $nameVariants;
 
     /**
      * Description
      *
-     * @var \string $description
+     * @var string $description
      */
     protected $description;
 
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string
+     * @return string
      */
     public function getPersistentIdentifier()
     {
@@ -75,7 +75,7 @@ class Calendar extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
@@ -87,7 +87,7 @@ class Calendar extends AbstractEntity
     /**
      * Returns the name
      *
-     * @return \string
+     * @return string
      */
     public function getName()
     {
@@ -97,7 +97,7 @@ class Calendar extends AbstractEntity
     /**
      * Sets the name
      *
-     * @param \string $name
+     * @param string $name
      *
      * @return void
      */
@@ -109,7 +109,7 @@ class Calendar extends AbstractEntity
     /**
      * Returns the nameVariants
      *
-     * @return \string
+     * @return string
      */
     public function getNameVariants()
     {
@@ -119,7 +119,7 @@ class Calendar extends AbstractEntity
     /**
      * Sets the nameVariants
      *
-     * @param \string $nameVariants
+     * @param string $nameVariants
      *
      * @return void
      */
@@ -131,7 +131,7 @@ class Calendar extends AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string
+     * @return string
      */
     public function getDescription()
     {
@@ -141,7 +141,7 @@ class Calendar extends AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      *
      * @return void
      */

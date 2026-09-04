@@ -38,7 +38,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Persistent Identifier
      *
-     * @var \string $persistentIdentifier
+     * @var string $persistentIdentifier
      * @Extbase\Validate("NotEmpty")
      */
     protected $persistentIdentifier;
@@ -46,21 +46,21 @@ class TemporalEntity extends AbstractEntity
     /**
      * Name
      *
-     * @var \string $name
+     * @var string $name
      */
     protected $name;
 
     /**
      * Name
      *
-     * @var \string $nameVariants
+     * @var string $nameVariants
      */
     protected $nameVariants;
 
     /**
      * Type
      *
-     * @var \integer $type
+     * @var int $type
      */
     protected $type;
 
@@ -91,21 +91,21 @@ class TemporalEntity extends AbstractEntity
     /**
      * Source
      *
-     * @var \string $source
+     * @var string $source
      */
     protected $source;
 
     /**
      * Description
      *
-     * @var \string $description
+     * @var string $description
      */
     protected $description;
 
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string
+     * @return string
      */
     public function getPersistentIdentifier()
     {
@@ -115,7 +115,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Returns the name
      *
-     * @return \string
+     * @return string
      */
     public function getName()
     {
@@ -137,7 +137,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Sets the name
      *
-     * @param \string $name
+     * @param string $name
      *
      * @return void
      */
@@ -149,7 +149,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Returns the nameVariants
      *
-     * @return \string
+     * @return string
      */
     public function getNameVariants()
     {
@@ -159,7 +159,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Sets the nameVariants
      *
-     * @param \string $nameVariants
+     * @param string $nameVariants
      *
      * @return void
      */
@@ -171,7 +171,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Returns the type
      *
-     * @return \integer
+     * @return int
      */
     public function getType()
     {
@@ -181,7 +181,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Sets the type
      *
-     * @param \integer $type
+     * @param int $type
      *
      * @return void
      */
@@ -259,7 +259,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Returns the source
      *
-     * @return \string
+     * @return string
      */
     public function getSource()
     {
@@ -269,7 +269,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Sets the source
      *
-     * @param \string $source
+     * @param string $source
      *
      * @return void
      */
@@ -281,7 +281,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string
+     * @return string
      */
     public function getDescription()
     {
@@ -291,7 +291,7 @@ class TemporalEntity extends AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      *
      * @return void
      */

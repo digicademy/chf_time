@@ -34,63 +34,63 @@ class DateRanges extends AbstractValueObject
     /**
      * The method for the date
      *
-     * @var \string $label
+     * @var string $label
      */
     protected $label;
 
     /**
      * The start date of the range
      *
-     * @var \string $datingFrom
+     * @var string $datingFrom
      */
     protected $datingFrom;
 
     /**
      * The precision of the from date
      *
-     * @var \string $precisionFrom
+     * @var string $precisionFrom
      */
     protected $precisionFrom;
 
     /**
      * The end date of the range
      *
-     * @var \string $datingTo
+     * @var string $datingTo
      */
     protected $datingTo;
 
     /**
      * The precision of the to date
      *
-     * @var \string $precisionTo
+     * @var string $precisionTo
      */
     protected $precisionTo;
 
     /**
      * A date key or other date qualifier
      *
-     * @var \string $datingPoint
+     * @var string $datingPoint
      */
     protected $datingPoint;
 
     /**
      * The dating method
      *
-     * @var \string $method
+     * @var string $method
      */
     protected $method;
 
     /**
      * The certainty of the date
      *
-     * @var \integer $certainty
+     * @var int $certainty
      */
     protected $certainty;
 
     /**
      * The duration
      *
-     * @var \string $duration
+     * @var string $duration
      */
     protected $duration;
 
@@ -111,7 +111,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the label
      *
-     * @return \string
+     * @return string
      */
     public function getLabel()
     {
@@ -121,7 +121,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the label
      *
-     * @param \string $label
+     * @param string $label
      *
      * @return void
      */
@@ -133,7 +133,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the datingFrom
      *
-     * @return \string
+     * @return string
      */
     public function getDatingFrom()
     {
@@ -143,7 +143,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the datingFrom
      *
-     * @param \string $datingFrom
+     * @param string $datingFrom
      *
      * @return void
      */
@@ -155,7 +155,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the precisionFrom
      *
-     * @return \string
+     * @return string
      */
     public function getPrecisionFrom()
     {
@@ -165,7 +165,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the precisionFrom
      *
-     * @param \string $precisionFrom
+     * @param string $precisionFrom
      *
      * @return void
      */
@@ -177,7 +177,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the datingTo
      *
-     * @return \string
+     * @return string
      */
     public function getDatingTo()
     {
@@ -187,7 +187,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the datingTo
      *
-     * @param \string $datingTo
+     * @param string $datingTo
      *
      * @return void
      */
@@ -199,7 +199,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the precisionTo
      *
-     * @return \string
+     * @return string
      */
     public function getPrecisionTo()
     {
@@ -209,7 +209,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the precisionTo
      *
-     * @param \string $precisionTo
+     * @param string $precisionTo
      *
      * @return void
      */
@@ -221,7 +221,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the datingPoint
      *
-     * @return \string
+     * @return string
      */
     public function getDatingPoint()
     {
@@ -231,7 +231,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the datingPoint
      *
-     * @param \string $datingPoint
+     * @param string $datingPoint
      *
      * @return void
      */
@@ -243,7 +243,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the method
      *
-     * @return \string
+     * @return string
      */
     public function getMethod()
     {
@@ -253,7 +253,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the method
      *
-     * @param \string $method
+     * @param string $method
      *
      * @return void
      */
@@ -265,7 +265,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the certainty
      *
-     * @return \integer
+     * @return int
      */
     public function getCertainty()
     {
@@ -275,7 +275,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the certainty
      *
-     * @param \integer $certainty
+     * @param int $certainty
      *
      * @return void
      */
@@ -287,7 +287,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Returns the duration
      *
-     * @return \string
+     * @return string
      */
     public function getDuration()
     {
@@ -297,7 +297,7 @@ class DateRanges extends AbstractValueObject
     /**
      * Sets the duration
      *
-     * @param \string $duration
+     * @param string $duration
      *
      * @return void
      */
